@@ -12,7 +12,6 @@ function copiar(){
             }, 3000);
 }
 
-
 function validar() {
     let textarea = document.getElementById("message");
     let copy = document.getElementById("title");
