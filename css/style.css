@@ -7,6 +7,7 @@
 /* MAJOR MONO*/
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 
+/* HTML: <div class="loader"></div> */
 
 :root {
     --white: #fffefa;
@@ -19,6 +20,26 @@
     --major-mono-font: "Major Mono Display", monospace;
     --stripe-size: 100px;
 }
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    position: fixed;
+      left: 50%;
+      top: 50%;
+    width: 45px;
+    aspect-ratio: .75;
+    --c: no-repeat linear-gradient(#ffffff 0 0);
+    background: 
+      var(--c) 0%   50%,
+      var(--c) 50%  50%,
+      var(--c) 100% 50%;
+    background-size: 20% 60%;
+    animation: l9 1s infinite;
+  }
+  @keyframes l9 {
+    33% {background-position: 0% 0%  ,50% 100%,100% 0%  }
+    66% {background-position: 0% 100%,50% 0%  ,100% 100%}
+  }
 
 
 html,
@@ -39,19 +60,33 @@ button {
 
 .parent {
     height: 100%;
-    display: flex;
+    /* display: flex; */
+    display: none;
     align-items: center;
     justify-content: space-around;
+
+    animation: opacidad 1s linear 1;
+}
+
+@keyframes opacidad {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
 }
 
 .content {
+    transition: 2s;
     width: 90%;
     height: 75%;
     border-radius: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-image: url(../img/fondo.gif);
+    background-image: url("../img/fondo.gif");
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -73,24 +108,21 @@ button {
 .encripter:hover {
     transition: 0.5s;
     backdrop-filter: brightness(10%);
+    border-radius: 1rem;
 }
 
 .message {
     width: 4.5rem;
     height: 100%;
     border-radius: 0 1rem 1rem 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
     background-image: var(--background-noice);
     text-align: center;
     background-color: #f0f0d8;
-
     color: var(--black);
-
     transform: rotate(180deg);
-
     writing-mode: vertical-lr;
 }
 
@@ -105,23 +137,22 @@ button {
     color: var(--white);
     background-color: var(--purple);
     margin-bottom: 1rem;
-
     font-family: var(--pixel-font);
 }
-
 
 .message p {
     font-size: 1.2rem;
 }
 
-.message samp {
-    font-size: 0.5rem;
+.encripter_content_actions {
+    width: 100%;
+    height: 100%;
+    display: flex;
 }
 
 .encripter_content{
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -150,22 +181,16 @@ button {
 .encripter textarea {
     width: 100%;
     height: 100%;
-
     padding: 0;
     margin: 0;
     margin-top: 1rem;
-
     display: flex;
     justify-content: center;
-
     border: none;
-
     box-shadow: none;
     background: none;
-
     font: inherit;
     resize: none;
-
     color: white;
     text-align: center;
 }
@@ -334,25 +359,21 @@ textarea::placeholder {
 .buttons {
     width: 95%;
     height: 100%;
-
     display: flex;
     align-items: start;
     flex-direction: column;
     justify-content: end;
-
     text-align: start;
-
     margin-bottom: .5rem;
 }
 
 button {
-    color: var(--black);
     background: none;
     border: none;
     font-size: 1.12rem;
     margin: 0;
     background-color: var(--white);
-    color: #4701dd;
+    color: var(--purple);
 }
 
 button:hover {
@@ -404,7 +425,6 @@ button:hover {
     font-size: 3rem;
     margin: 1rem 0;
 }
-
 
 #snackbar {
     visibility: hidden;
@@ -477,14 +497,145 @@ button:hover {
     }
 }
 
+@media (min-width: 600px) and (max-width: 770px) {
+    .content {
+        width: 95%;
+    }
 
-@media (min-width: 600px) and (max-width: 768px) {
+    .message {
+        width: 3rem;
+    }
 
+    .encripter_content_actions {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .encripter_content {
+        flex-grow: 2;
+    }
+
+    .encripter textarea {
+        font-size: 1.25rem;
+    }
+
+    .stripe {
+        justify-content: end;
+    }
+
+    .stripe img {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    
+    .actions {
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        flex-grow: 1;
+        justify-content: space-around;
+    }
+
+    .project_id {
+        width: 8rem;
+        order: 0;
+    }
+
+    .code_icon {
+        width: auto;
+        margin-right: 0.5rem;
+        display: flex;
+        align-items: center;
+        order: 4;
+    }
+
+    .code_icon p {
+        font-size: 6rem;
+    }
+
+    .buttons {
+        align-items: center;
+        justify-content: center;
+    }
+
+    button {
+        height: 4rem;
+        margin: 0.5rem;
+    }
+
+    .barras_hour {
+        display: none;
+    }
 }
 
+@media (max-width: 599px) {
+    .content {
+        width: 95%;
+    }
 
-@media (max-width: 600px) {
-    body {
-        background-color: red;
+    .message {
+        width: 3rem;
+    }
+
+    .encripter_content_actions {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .encripter_content {
+        flex-grow: 2;
+    }
+
+    .encripter textarea {
+        font-size: 1rem;
+    }
+
+    .stripe {
+        justify-content: end;
+    }
+
+    .stripe img {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .actions {
+        width:auto;
+        height: auto;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .project_id {
+        display: none;
+    }
+
+    .code_icon {
+        width: auto;
+        margin-right: 0.5rem;
+        display: flex;
+        align-items: center;
+        order: 4;
+    }
+
+    .code_icon p {
+        font-size: 4rem;
+    }
+
+    .buttons {
+        width: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button {
+        height: 4rem;
+        margin: 0.5rem;
+    }
+
+    .barras_hour {
+        display: none;
     }
 }
