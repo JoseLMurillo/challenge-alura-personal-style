@@ -31,11 +31,20 @@ const elements = {
     hour: document.getElementById("hour"),
     date: document.getElementById("date"),
     random_font: document.getElementById("random-font"),
-    random_font2: document.getElementById("random-font2")
+    random_font2: document.getElementById("random-font2"),
+    parent: document.getElementById("parent"),
+    loader: document.getElementById("loader")
 }
 
 elements.date.textContent = dateInfo.local;
 elements.hour.textContent = `${dateInfo.h}:${dateInfo.m}`;
+
+window.addEventListener("load", (event) => {
+    setTimeout(() => {
+        elements.parent.style.display = "flex";
+        elements.loader.style.display = 'none';
+    },1500)
+  });
 
 function updateTime(){
     dateInfo.m += 1;
