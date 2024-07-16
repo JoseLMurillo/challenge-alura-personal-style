@@ -10,69 +10,74 @@
 </head>
 
 <body>
-    <div class="parent">
-        <div class="content">
+    <div id="loader" class="loader"></div>
+    <div id="parent" class="parent">
+        <div id="content" class="content">
             <div class="encripter">
                 <div class="message">
                     <p id="logo" class="logo">a</p>
                     <p>Solo letras minusculas y sin acentos</p>
                 </div>
 
-                <div class="encripter_content">
-                    <div class="text_input">
-                        <h1 id="title">ENCRIPTADOR</h1>
+                <div class="encripter_content_actions">
+                    <div class="encripter_content">
+                        <div class="text_input">
+                            <h1 id="title">ENCRIPTADOR</h1>
 
-                        <textarea name="message" id="message" onkeyup="validar()"
-                            placeholder="Tu mensaje de encriptacion aqui"></textarea>
+                            <textarea name="message" id="message" onkeyup="validar()"
+                                placeholder="Tu mensaje de encriptacion aqui"></textarea>
+                        </div>
+
+
+                        <div class="date_qrcode">
+                            <div class="date_fragile">
+                                <p id="date">10/17/OCT</p>
+                                <img src="./img/fragile_icon.svg" alt="fargine logo">
+                            </div>
+
+                            <div class="stripe">
+                                <div id="danger" class="stripe_inner stripe_standar">DANGER</div>
+
+                                <img src="./img/github_jose_murillo_qr.png" alt="codigo qr al github">
+                            </div>
+                        </div>
                     </div>
 
-
-                    <div class="date_qrcode">
-                        <div class="date_fragile">
-                            <p id="date">10/17/OCT</p>
-                            <img src="./img/fragile_icon.svg" alt="fargine logo">
+                    <div class="actions">
+                        <div class="project_id">
+                            <h1>proyect ID</h1>
+                            <p id="code">164.32.17.8</p>
                         </div>
 
-                        <div class="stripe">
-                            <div id="danger" class="stripe_inner stripe_standar">DANGER</div>
-
-                            <img src="./img/github_jose_murillo_qr.png" alt="codigo qr al github">
+                        <div class="code_icon">
+                            <div style="display: flex; justify-content: center;">
+                                <p id="random-font">J</p>
+                                <p id="random-font2">M</p>
+                            </div>
+                            <svg display="none" id="Flat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                <path
+                                    d="M120,144V96a8,8,0,0,1,16,0v48a8,8,0,0,1-16,0Zm116.76758,67.981a23.75438,23.75438,0,0,1-20.791,12.01123H40.02344A23.99994,23.99994,0,0,1,19.252,187.96973L107.22852,35.97705a24.00024,24.00024,0,0,1,41.543,0l87.97657,151.99219A23.75354,23.75354,0,0,1,236.76758,211.981Zm-13.86719-15.99658L134.92383,43.99219a8.00025,8.00025,0,0,0-13.84766,0h0L33.09961,195.98438a8.00079,8.00079,0,0,0,6.92383,12.00781H215.97656a8.00079,8.00079,0,0,0,6.92383-12.00781ZM128,168a12,12,0,1,0,12,12A12.01343,12.01343,0,0,0,128,168Z" />
+                            </svg>
                         </div>
+
+                        <div class="buttons">
+                            <button class="btn_encriptar" onclick="encriptar()">
+                                Encriptar.............
+                            </button>
+                            <button class="btn_desencriptar" onclick="desencriptar()">
+                                Desencriptar.............
+                            </button>
+                        </div>
+
+                        <div class="barras_hour">
+                            <div class="joseLMurillo_codebarras"></div>
+                            <p id="hour" class="hour">3:26pm</p>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="actions">
-                    <div class="project_id">
-                        <h1>proyect ID</h1>
-                        <p id="code">164.32.17.8</p>
-                    </div>
 
-                    <div class="code_icon">
-                        <div style="display: flex; justify-content: center;">
-                            <p id="random-font">J</p>
-                            <p id="random-font2">M</p>
-                        </div>
-                        <svg display="none" id="Flat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-                            <path
-                                d="M120,144V96a8,8,0,0,1,16,0v48a8,8,0,0,1-16,0Zm116.76758,67.981a23.75438,23.75438,0,0,1-20.791,12.01123H40.02344A23.99994,23.99994,0,0,1,19.252,187.96973L107.22852,35.97705a24.00024,24.00024,0,0,1,41.543,0l87.97657,151.99219A23.75354,23.75354,0,0,1,236.76758,211.981Zm-13.86719-15.99658L134.92383,43.99219a8.00025,8.00025,0,0,0-13.84766,0h0L33.09961,195.98438a8.00079,8.00079,0,0,0,6.92383,12.00781H215.97656a8.00079,8.00079,0,0,0,6.92383-12.00781ZM128,168a12,12,0,1,0,12,12A12.01343,12.01343,0,0,0,128,168Z" />
-                        </svg>
-                    </div>
-
-                    <div class="buttons">
-                        <button class="btn_encriptar" onclick="encriptar()">
-                            Encriptar.............
-                        </button>
-                        <button class="btn_desencriptar" onclick="desencriptar()">
-                            Desencriptar.............
-                        </button>
-                    </div>
-
-                    <div class="barras_hour">
-                        <div class="joseLMurillo_codebarras"></div>
-                        <p id="hour" class="hour">3:26pm</p>
-                    </div>
-
-                </div>
             </div>
         </div>
 
