@@ -24,7 +24,7 @@
                         <div class="text_input">
                             <h1 id="title">ENCRIPTADOR</h1>
 
-                            <textarea name="message" id="message" onkeyup="validar()"
+                            <textarea name="message" id="message" onmousedown="limpiarPlaceholder()" onblur="restaurarPlaceholder()" onfocus="limpiarPlaceholder()" onkeyup="validar()"
                                 placeholder="Tu mensaje de encriptacion aqui"></textarea>
                         </div>
 

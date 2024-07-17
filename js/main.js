@@ -1,6 +1,22 @@
 const caracteresPermitidos = "abcdefghijklmnñopqrstuvwxyz ";
 let textoCorrecto = "";
 
+function limpiarPlaceholder() {
+    let textarea = document.getElementById('message');
+    if (textarea.value === '') {
+        textarea.placeholder = '';
+        textarea.classList.remove('placeholder-active');
+    }
+}
+
+function restaurarPlaceholder() {
+    let textarea = document.getElementById('message');
+    if (textarea.value === '') {
+        textarea.placeholder = 'Tu mensaje de encriptacion aqui';
+        textarea.classList.add('placeholder-active');
+    }
+}
+
 function copiar(){
     let textarea = document.getElementById("message");
     navigator.clipboard.writeText(textarea.value);
