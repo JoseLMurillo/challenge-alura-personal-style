@@ -31,6 +31,6 @@ Este proyecto permite encriptar y desencriptar mensajes utilizando un conjunto e
 - **u** → ufat
 
 # Imagenes
-![desktop 1](desktop%201.png)
-![[desktop 1.png]]![[tablet 1.png]]
-![[mobile 1.png]]
+![desktop 1.png](https://github.com/JoseLMurillo/challenge-alura-personal-style/blob/main/imgPreviews/desktop%201.png)
+![tablet 1.png](https://github.com/JoseLMurillo/challenge-alura-personal-style/blob/main/imgPreviews/mobile%201.png)
+![mobile 1.png](https://github.com/JoseLMurillo/challenge-alura-personal-style/blob/main/imgPreviews/tablet%201.png)
