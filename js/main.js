@@ -22,6 +22,16 @@ function copiar(){
     navigator.clipboard.writeText(textarea.value);
 
     const snackbar = document.getElementById('snackbar');
+            snackbar.textContent = 'Texto copiado al portapapeles';
+            snackbar.className = 'show';
+            setTimeout(() => {
+                snackbar.className = snackbar.className.replace('show', '');
+            }, 3000);
+}
+
+function mensajeValoresPermitidos(){
+    const snackbar = document.getElementById('snackbar');
+            snackbar.textContent = 'Solo letras minusculas y sin acentos';
             snackbar.className = 'show';
             setTimeout(() => {
                 snackbar.className = snackbar.className.replace('show', '');
@@ -55,6 +65,8 @@ function validar() {
 
     if (textoCorrecto !== textarea.value) {
         textarea.value = textoCorrecto;
+    } else {
+        mensajeValoresPermitidos();
     }
 }
 
