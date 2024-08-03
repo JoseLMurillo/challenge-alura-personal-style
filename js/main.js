@@ -65,8 +65,9 @@ function validar() {
 
     if (textoCorrecto !== textarea.value) {
         textarea.value = textoCorrecto;
-    } else {
         mensajeValoresPermitidos();
+    } else {
+        //mensajeValoresPermitidos();
     }
 }
 
@@ -78,28 +79,31 @@ function encriptar() {
         return;
     }
 
-    let contador = 0;
+    if(mensaje.length > 0 && mensaje.length < 1000){
+        let contador = 0;
 
-    while (contador < mensaje.length) {
-        if (mensaje[contador] == "e") {
-            MensajeNuevo += "enter";
-        } else if (mensaje[contador] == "i") {
-            MensajeNuevo += "imes";
-        } else if (mensaje[contador] == "a") {
-            MensajeNuevo += "ai";
-        } else if (mensaje[contador] == "o") {
-            MensajeNuevo += "ober";
-        } else if (mensaje[contador] == "u") {
-            MensajeNuevo += "ufat";
-        } else {
-            MensajeNuevo += mensaje[contador];
+        while (contador < mensaje.length) {
+            if (mensaje[contador] == "e") {
+                MensajeNuevo += "enter";
+            } else if (mensaje[contador] == "i") {
+                MensajeNuevo += "imes";
+            } else if (mensaje[contador] == "a") {
+                MensajeNuevo += "ai";
+            } else if (mensaje[contador] == "o") {
+                MensajeNuevo += "ober";
+            } else if (mensaje[contador] == "u") {
+                MensajeNuevo += "ufat";
+            } else {
+                MensajeNuevo += mensaje[contador];
+            }
+    
+            contador++;
         }
-
-        contador++;
+    
+        mostrarEncriptado(MensajeNuevo);
+        changeColor();
     }
 
-    mostrarEncriptado(MensajeNuevo);
-    changeColor();
 }
 
 function extraerCaracteres(inicio, fin, palabra) {
